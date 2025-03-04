@@ -3,3 +3,10 @@
 @import "flowbite/src/themes/default";
 @source "../node_modules/flowbite";
 @custom-variant dark (&:where(.dark, .dark *));
+@theme {
+  --color-mainColor: #2578ef;
+  --color-lightColor: #eee;
+}
+body {
+  background-color: #f2f2f2;
+}

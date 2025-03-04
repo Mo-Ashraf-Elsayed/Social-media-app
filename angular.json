@@ -7,7 +7,11 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "css"
+          "style": "css",
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
         }
       },
       "root": "",
@@ -39,6 +43,12 @@
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                  "with": "./src/environment/environment.ts",
+                  "replace": "./src/environment/environment.prod.ts"
+                }
+              ],
               "budgets": [
                 {
                   "type": "initial",
