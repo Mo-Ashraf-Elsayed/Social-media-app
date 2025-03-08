@@ -1,12 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
-@import "tailwindcss";
-@import "flowbite/src/themes/default";
-@source "../node_modules/flowbite";
-@custom-variant dark (&:where(.dark, .dark *));
-@theme {
-  --color-mainColor: #2578ef;
-  --color-lightColor: #eee;
+:root {
+  --mainColor: #2578ef;
+  --lightColor: #eee;
 }
 body {
   background-color: #f2f2f2;
+}
+.bg-mainColor {
+  background-color: var(--mainColor);
+  color: white;
+}
+.text-mainColor {
+  color: var(--mainColor);
+}
+.w-and-h-20px {
+  width: 20px;
+  height: 20px;
 }
