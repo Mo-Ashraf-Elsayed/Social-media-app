@@ -1,0 +1,14 @@
+/* :host > * {
+  padding: 0;
+} */
+
+.mat-mdc-card-outlined {
+  border: none;
+}
+/* .mat-mdc-card-outlined > * {
+  padding: 0;
+} */
+.example-header-image {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
+}

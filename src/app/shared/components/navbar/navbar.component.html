@@ -3,19 +3,14 @@
         <a class="navbar-brand " [routerLink]="'.'"><h1
                 class="fs-3 text-mainColor">Linked
                 Posts</h1></a>
-
-        <div class="row">
-            <div class="col">
-                <div ngbDropdown class="d-inline-block">
-                    <button type="button" class="border-0 bg-transparent"
-                        id="dropdownBasic1" ngbDropdownToggle>
-                        Toggle dropdown
-                    </button>
-                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                        <button ngbDropdownItem>Action - 1</button>
-                        <button ngbDropdownItem>Another Action</button>
-                    </div>
-                </div>
+        <div ngbDropdown class="d-inline-block">
+            <button type="button" class="border-0 bg-transparent p-0"
+                id="dropdownBasic1" ngbDropdownToggle>
+                Toggle dropdown
+            </button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <button ngbDropdownItem>Action - 1</button>
+                <button ngbDropdownItem>Another Action</button>
             </div>
         </div>
     </div>

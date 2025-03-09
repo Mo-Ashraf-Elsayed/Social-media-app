@@ -1,0 +1,15 @@
+.home-container {
+  width: 700px;
+  margin: 1rem auto;
+  border-radius: 0.3rem;
+}
+@media only screen and (max-width: 768px) {
+  .home-container {
+    width: 530px;
+  }
+}
+@media only screen and (max-width: 558px) {
+  .home-container {
+    width: 95%;
+  }
+}
