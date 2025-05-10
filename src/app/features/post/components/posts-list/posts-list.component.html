@@ -1,3 +1,10 @@
-@for (post of posts; track $index) {
-<app-post [post]="post"></app-post>
-}
+<div infiniteScroll
+    [infiniteScrollUpDistance]="1" [infiniteScrollThrottle]="150"
+    (scrolled)="getPosts()">
+    @for (post of posts; track $index) {
+    <app-post
+        [post]="post"></app-post>
+    }@empty {
+    <div class="spinner">Loading posts...</div>
+    }
+</div>

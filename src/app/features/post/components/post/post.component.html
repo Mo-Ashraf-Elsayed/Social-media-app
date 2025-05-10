@@ -1,6 +1,8 @@
 <mat-card appearance="outlined" class="py-4 rounded-0">
     <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
+        <div mat-card-avatar class="example-header-image" [style]="{
+            'background-image':getBackgroundUserImage(post.user.photo)
+        }"></div>
         <mat-card-title>{{post.user.name}}</mat-card-title>
         <mat-card-subtitle>{{createdAt(post.createdAt)}}</mat-card-subtitle>
         <div class="flex-grow-1 text-end">

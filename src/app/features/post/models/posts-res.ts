@@ -1,3 +1,9 @@
+export interface PostRes {
+  message: string;
+  paginationInfo: PaginationInfo;
+  posts: Post[];
+}
+
 export interface Post {
   _id: string;
   body: string;
@@ -6,6 +12,13 @@ export interface Post {
   createdAt: string;
   comments: Comment[];
   id: string;
+}
+export interface PaginationInfo {
+  currentPage: number;
+  numberOfPages: number;
+  limit: number;
+  nextPage: number;
+  total: number;
 }
 
 export interface User {

@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { Post } from '../../models/post';
+import { Post } from '../../models/posts-res';
 import moment from 'moment';
 
 @Component({
@@ -24,5 +24,8 @@ export class PostComponent {
       }`;
 
     return finalTime + ' ago';
+  }
+  getBackgroundUserImage(userSrc: string): string {
+    return `url(${userSrc})`;
   }
 }
