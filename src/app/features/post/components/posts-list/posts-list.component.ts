@@ -4,6 +4,7 @@ import { PostsService } from '../../services/posts.service';
 import { Subscription } from 'rxjs';
 import { Post } from '../../models/posts-res';
 import { InfiniteScrollDirective } from 'ngx-infinite-scroll';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-posts-list',

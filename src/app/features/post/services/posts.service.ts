@@ -14,4 +14,10 @@ export class PostsService {
       environment.BASEURL + `posts?limit=${limit}&page=${page}`
     );
   }
+  createPost(formData: FormData): Observable<{ message: string }> {
+    return this.http.post<{ message: string }>(
+      environment.BASEURL + `posts`,
+      formData
+    );
+  }
 }

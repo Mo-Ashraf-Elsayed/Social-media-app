@@ -1,1 +1,41 @@
-<p>create-post works!</p>
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Create Post</h4>
+        <button type="button" class="btn-close" aria-label="Close"
+            (click)="modal.dismiss('fail')"></button>
+    </div>
+    <div class="modal-body">
+        <div class="mb-3">
+            <div class="input-group">
+                <input type="file" (change)="getFile($event)"
+                    id="dateOfBirth"
+                    class="form-control"
+                    placeholder="yyyy-mm-dd"
+                    name="dp"
+                    ngbDatepicker
+                    #dp="ngbDatepicker" />
+            </div>
+            <div class="input-group mt-2">
+                <input type="text" class="form-control" name="body"
+                    [formControl]="body">
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        @if(body.valid||image){
+        <button (click)="submitForm();modal.close('success')"
+            class="btn btn-outline-secondary">Save</button>
+        }@else {
+        <button
+            class="btn btn-outline-secondary">Save</button>
+        }
+
+    </div>
+
+</ng-template>
+
+<div class="bg-white p-4 mb-0 rounded shadow-none">
+    <div class="form-control rounded-5 text-secondary"
+        (click)="open(content)">What is in your mind</div>
+</div>
+<hr />
