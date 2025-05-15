@@ -7,14 +7,12 @@ import {
 } from '@angular/core';
 import {
   FormControl,
-  FormGroup,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
 
 import {
   ModalDismissReasons,
-  NgbActiveModal,
   NgbDatepickerModule,
   NgbModal,
 } from '@ng-bootstrap/ng-bootstrap';
@@ -39,7 +37,6 @@ export class CreatePostComponent {
       .result.then(
         (result) => {
           this.closeResult.set(`Closed with: ${result}`);
-          console.log(result);
         },
         (reason) => {
           this.closeResult.set(`Dismissed ${this.getDismissReason(reason)}`);
@@ -65,19 +62,21 @@ export class CreatePostComponent {
       }
     }
   }
-  setTheFormData() {
+  createPost() {
+    const formData = new FormData()
     if (this.body.value) {
-      this.formData.append('body', this.body.value || '');
+    this.formData.append('body', this.body.value || '');
     }
     if (this.image) {
       this.formData.append('image', this.image);
     }
-  }
-  createPost() {
-    this.postsService.createPost(this.formData).subscribe({
-      next: (res) => {
+    this.postsService.createPost(formData).subscribe({
+      next:(res)=>{
         console.log(res);
       },
+      error:(err)=>{
+        console.log(err);
+      }
     });
   }
   resetBodyInput() {
@@ -85,7 +84,6 @@ export class CreatePostComponent {
   }
   submitForm() {
     if (this.body.valid || this.image) {
-      this.setTheFormData();
       this.createPost();
       this.body.setValue('');
     }
